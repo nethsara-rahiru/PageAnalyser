@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PageAnalyser V1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📘 PDF Line Detector</h1>
+
+  <input type="file" id="fileInput" accept=".pdf" />
+
+  <!-- Toolbox panel for page selection -->
+  <div id="pageTogglePanel">
+  <button id="togglePagesBtn">📄 Select Pages to Display</button>
+  <div id="pageCheckboxes" style="display: none; margin-top: 10px;"></div>
+</div>
+
+    
+  <button id="downloadBtn">⬇️ Download Selected Page Images</button>
+
+  <!-- Main PDF render area -->
+  <div id="canvasContainer"></div>
+
+  <!-- PDF.js library -->
+  <!-- JSZip and FileSaver for creating zip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

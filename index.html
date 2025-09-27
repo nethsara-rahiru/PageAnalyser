@@ -4,6 +4,40 @@
   <meta charset="UTF-8" />
   <title>PageAnalyser V1</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    #canvasContainer {
+      position: relative;
+      display: inline-block;
+    }
+
+    .margin-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: red;
+      cursor: ew-resize;
+    }
+
+    #applyAllPopup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 2000;
+    }
+  </style>
 </head>
 <body>
   <h1>📘 PDF Line Detector</h1>
@@ -12,18 +46,23 @@
 
   <!-- Toolbox panel for page selection -->
   <div id="pageTogglePanel">
-  <button id="togglePagesBtn">📄 Select Pages to Display</button>
-  <div id="pageCheckboxes" style="display: none; margin-top: 10px;"></div>
-</div>
+    <button id="togglePagesBtn">📄 Select Pages to Display</button>
+    <div id="pageCheckboxes" style="display: none; margin-top: 10px;"></div>
+  </div>
 
-    
   <button id="downloadBtn">⬇️ Download Selected Page Images</button>
 
   <!-- Main PDF render area -->
   <div id="canvasContainer"></div>
 
-  <!-- PDF.js library -->
-  <!-- JSZip and FileSaver for creating zip -->
+  <!-- Apply-to-all popup -->
+  <div id="applyAllPopup">
+    Apply these margin settings to all pages?
+    <button id="applyAllYes">Yes</button>
+    <button id="applyAllNo">No</button>
+  </div>
+
+  <!-- PDF.js + JSZip + FileSaver -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>

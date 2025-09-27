@@ -130,3 +130,19 @@ canvas {
 #togglePagesBtn:hover {
   background-color: #3e6ee0;
 }
+
+.left-margin-handle, .right-margin-handle {
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 2px;
+}
+
+.left-margin-handle { 
+  background: green; width: 6px;
+ }
+.right-margin-handle {
+   background: blue; width: 6px;
+   }
+
+.blue-marker { position: absolute; background-color: rgba(0,0,255,0.25); z-index: 20; }
+.gray-marker { position: absolute; background-color: rgba(100,100,100,0.12); z-index: 18; }
+.footer-marker { box-shadow: 0 0 10px red; border-radius: 2px; }
